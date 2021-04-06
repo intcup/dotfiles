@@ -1,0 +1,24 @@
+[bar/top]
+bottom=false
+modules-left=bspwm
+modules-center=xwindow
+background=#a0000000
+tray-position = right
+font-0 = CodeNewRoman Nerd Font:size=12;3
+wm-restack = bspwm
+
+
+[module/bspwm]
+type=internal/bspwm
+label-empty =
+label-focused = %index%:%icon%
+label-focused-foreground = #30f0f0
+label-focused-padding = 1
+label-occupied = %index%:%icon%
+label-occupied-padding = 1
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-default = 
+
+[module/xwindow]
+type=internal/xwindow
