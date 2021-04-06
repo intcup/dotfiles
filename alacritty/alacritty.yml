@@ -1,9 +1,9 @@
 window:
         dynamic_padding: true
 
-background_opacity: 0.8
+background_opacity: 0.9
 
 font:
         normal:
-                family: CodeNewRoman Nerd Font Mono
-        size: 14
+                family: Code New Roman
+        size: 12

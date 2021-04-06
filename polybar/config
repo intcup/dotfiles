@@ -2,23 +2,32 @@
 bottom=false
 modules-left=bspwm
 modules-center=xwindow
+modules-right=battery datetime
 background=#a0000000
 tray-position = right
-font-0 = CodeNewRoman Nerd Font:size=12;3
+font-0 = Code New Roman:size=12:weight=bold;3
 wm-restack = bspwm
 
 
 [module/bspwm]
 type=internal/bspwm
 label-empty =
-label-focused = %index%:%icon%
+label-focused = %index%
 label-focused-foreground = #30f0f0
 label-focused-padding = 1
-label-occupied = %index%:%icon%
+label-occupied = %index%
 label-occupied-padding = 1
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-default = 
 
 [module/xwindow]
 type=internal/xwindow
+label = %title%
+label-maxlen = 50
+
+[module/datetime]
+type=internal/date
+time = %H:%M
+interval=30
+label = %date% %time% %{}
+
+[module/battery]
+type = internal/battery
