@@ -1,4 +1,4 @@
-mkdir ~/.config
+mkdir ~/.config -p
 ln -sf $(pwd)/bspwm ~/.config
 ln -sf $(pwd)/sxhkd ~/.config
 ln -sf $(pwd)/nvim ~/.config
@@ -9,4 +9,4 @@ ln -sf $(pwd)/zshrc ~/.zshrc
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 ln -sf $(pwd)/polybar ~/.config
 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+! test -f ~/.local/share/nvim/site/autoload/plug.vim && sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
