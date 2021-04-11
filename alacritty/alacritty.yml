@@ -5,5 +5,5 @@ background_opacity: 0.9
 
 font:
         normal:
-                family: Code New Roman
-        size: 12
+                family: Bitstream Vera Sans Mono
+        size: 10
