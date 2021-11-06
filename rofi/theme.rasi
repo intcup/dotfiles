@@ -1,0 +1,132 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.0
+ **/
+* {
+    background-color: #0000;
+    transparent: #0000;
+    color-primario: #309080;
+}
+element {
+    cursor:           pointer;
+    border:           0;
+    padding: 2px;
+    background-color: @transparent;
+}
+element selected {
+    background-color: var(color-primario);
+    text-color: #303030;
+}
+
+element-text selected {
+	color: #000;
+}
+
+element-text {
+    color: var(color-primario);
+    vertical-align: 0.5;
+    background-color: @transparent;
+    margin: 0px 10px;
+}
+
+element-text element-icon{
+    background-color: inherit;
+}
+element-icon {
+    size:             22px ;
+    cursor:           inherit;
+    text-color:       inherit;
+    background-color: @transparent;
+}
+window {
+    padding:          5;
+    background-color: rgba ( 48, 48, 48, 90 % );
+    width:            20.0000% ;
+    border-color:     var(color-primario);
+    border:           1;
+    height:           30.0000% ;
+}
+mainbox {
+    padding: 0;
+    background-color: @transparent;
+    border:  0;
+}
+message {
+    padding:      1px ;
+    border-color: var(separatorcolor);
+    border:       2px dash 0px 0px ;
+}
+textbox {
+    text-color: var(foreground);
+}
+listview {
+    padding:      2px 0px 0px ;
+    scrollbar:    true;
+    border-color: var(separatorcolor);
+    spacing:      2px ;
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+    background-color: @transparent;
+}
+scrollbar {
+    width:        8px ;
+    padding:      0;
+    handle-width: 8px ;
+    border:       0;
+    handle-color: var(color-primario);
+}
+sidebar {
+    border-color: var(separatorcolor);
+    border:       2px dash 0px 0px ;
+}
+button {
+    cursor:     pointer;
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+button selected {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
+num-filtered-rows {
+    expand:     false;
+    text-color: rgba ( 128, 128, 128, 100 % );
+}
+num-rows {
+    expand:     false;
+    text-color: rgba ( 128, 128, 128, 100 % );
+}
+textbox-num-sep {
+    expand:     false;
+    str:        "/";
+    text-color: rgba ( 128, 128, 128, 100 % );
+}
+inputbar {
+    padding:    1px ;
+    spacing:    0px ;
+    text-color: var(color-primario);
+    children:   [ prompt,textbox-prompt-colon,entry,num-filtered-rows,textbox-num-sep,num-rows,case-indicator ];
+}
+case-indicator {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+entry {
+    padding:           5px ;
+    text-color: var(color-primario);
+    cursor:            text;
+    spacing:           0;
+    placeholder-color: rgba ( 128, 128, 128, 100 % );
+    placeholder:       "Type to filter";
+}
+prompt {
+    padding:    5px ;
+    spacing:    0;
+    text-color: var(color-primario);
+}
+textbox-prompt-colon {
+    padding: 5px;
+    expand:     false;
+    str:        "";
+    text-color: var(color-primario);
+}

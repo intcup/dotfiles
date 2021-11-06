@@ -1,33 +1,66 @@
+[colors]
+color-0 = #309080
 [bar/top]
 bottom=false
 modules-left=bspwm
-modules-center=xwindow
-modules-right=battery datetime
-background=#a0000000
+modules-right=root home cpu memory battery date time
+module-margin=1
+background= #a0303030
 tray-position = right
-font-0 = Bitstream Vera Sans:size=10;3
+font-0 = Roboto Mono:weight=bold:size=10;3
+font-1 = Symbols Nerd Font;4
 wm-restack = bspwm
-
+padding = 1
 
 [module/bspwm]
 type=internal/bspwm
 label-empty =
-label-focused = %index%
-label-focused-foreground = #30f0f0
+label-focused = %index% %icon%
+label-focused-foreground = ${colors.color-0}
 label-focused-padding = 1
-label-occupied = %index%
+label-occupied = %index% %icon%
 label-occupied-padding = 1
 
-[module/xwindow]
-type=internal/xwindow
-label = %title%
-label-maxlen = 50
-
-[module/datetime]
+[module/time]
 type=internal/date
 time = %H:%M
-interval=30
-label = %date% %time% %{}
+interval=5
+label = %time:6%
+format-prefix = 
+format-prefix-foreground = ${colors.color-0}
+
+[module/date]
+type=internal/date
+date=%d %b %y
+label = %date:10%
+format-prefix = 
+format-prefix-foreground = ${colors.color-0}
+
+[module/memory]
+type = internal/memory
+format-prefix = 
+format-prefix-foreground = ${colors.color-0}
+label = %percentage_used:3%%
+
+[module/cpu]
+type = internal/cpu
+label = %percentage:3%%
+format-prefix =  
+format-prefix-foreground = ${colors.color-0}
+
+[module/home]
+type = internal/fs
+mount-0 = /home
+label-mounted = %free%
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = ${colors.color-0}
+
+[module/root]
+type = internal/fs
+mount-0 = /
+label-mounted = %free%
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = ${colors.color-0}
 
 [module/battery]
 type = internal/battery

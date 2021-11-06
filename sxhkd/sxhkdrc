@@ -1,15 +1,15 @@
-#
-# wm independent hotkeys
-#
-
 # terminal emulator
 super + Return
-	alacritty
+    alacritty
 
+super + n
+    alacritty -e nvim
 # program launcher
 super + @space
-	rofi -show drun
+	rofi -show drun -drun-use-desktop-cache
 
+super + alt + @space
+	rofi -show drun -drun-reload-desktop-cache
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -17,6 +17,8 @@ super + Escape
 #
 # bspwm hotkeys
 #
+super + b
+    vimb
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -119,3 +121,10 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Captura de pantalla
+Print
+	scrot ~/Imagenes/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png
+
+super + Print
+	scrot ~/Imagenes/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png -s -f

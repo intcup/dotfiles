@@ -1,61 +1,29 @@
 set number
-set laststatus=0
 set termguicolors
-set updatetime=100
 
 call plug#begin('~/.vim/plugged')
-Plug 'adrian5/oceanic-next-vim'
+
+Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'liuchengxu/vista.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'chriskempson/base16-vim'
+
 call plug#end()
 
-let g:LanguageClient_serverCommands = {
-	\ 'python' : ['pyls'],
-	\ 'cpp' : ['clangd']
-	\}
+au User lsp_setup call lsp#register_server({'name': 'clangd','cmd': {server_info->['clangd']},'allowlist': ['cpp', 'c'],})
 
-let g:LanguageClient_diagnosticsDisplay = {
-			\ 1: {
-			\ "name": "Error",
-			\ "texthl": "LanguageClientError",
-			\ "signText": "!",
-			\ "signTexthl": "LanguageClientErrorSign",
-			\ "virtualTexthl": "Error",
-			\ }
-			\ ,
-			\ 2: {
-			\ "name": "Warning",
-			\ "texthl": "LanguageClientWarning",
-			\ "signText": "?",
-			\ "signTexthl": "LanguageClientWarningSign",
-			\ "virtualTexthl": "Todo",
-			\ },
-			\         3: {
-			\ "name": "Information",
-			\ "texthl": "LanguageClientInfo",
-			\ "signText": "¡",
-			\ "signTexthl": "LanguageClientInfoSign",
-			\ "virtualTexthl": "Todo",
-			\ },
-			\ 4: {
-			\ "name": "Hint",
-			\ "texthl": "LanguageClientInfo",
-			\ "signText": "-",
-			\ "signTexthl": "LanguageClientInfoSign",
-			\ "virtualTexthl": "Todo",
-			\ },
-		\ }
+set updatetime=100
+colorscheme base16-material
 
+hi Normal guibg=none
+hi SignColumn guibg=none
+hi LineNr guibg=none
 
-let g:deoplete#enable_at_startup = 1
+let mapleader=" "
 
-let g:oceanic_gutter_like_bg=1
-let g:oceanic_transparent_bg=1
-color oceanicnext
-hi LineNr guifg=#707070 gui=bold
-
-source ~/.config/nvim/controls.vim
-source ~/.config/nvim/lsp_config.vim
+nnoremap <Leader>n :NERDTreeToggle <CR>
+nnoremap <Leader>x :Explore <CR>
+nnoremap <Leader>gu :GitGutterUndoHunk <CR>
+nnoremap <Leader>gad :GitGutterStageHunk <CR>
