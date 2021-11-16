@@ -41,6 +41,7 @@ precmd() {
 
 alias ls='ls --color'
 alias ll='ls -l'
+alias la='ls -la'
 alias gst='git status'
 alias gad='git add'
 alias gcm='git commit'

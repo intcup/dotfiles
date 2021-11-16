@@ -1,9 +1,7 @@
 # terminal emulator
 super + Return
-    alacritty
+    kitty
 
-super + n
-    alacritty -e nvim
 # program launcher
 super + @space
 	rofi -show drun -drun-use-desktop-cache

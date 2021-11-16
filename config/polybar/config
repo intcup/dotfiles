@@ -7,7 +7,7 @@ modules-right=root home cpu memory battery date time
 module-margin=1
 background= #a0303030
 tray-position = right
-font-0 = Roboto Mono:weight=bold:size=10;3
+font-0 = Roboto Mono:weight=medium:pixelsize=10;3
 font-1 = Symbols Nerd Font;4
 wm-restack = bspwm
 padding = 1
