@@ -18,6 +18,8 @@ au User lsp_setup call lsp#register_server({'name': 'clangd','cmd': {server_info
 set updatetime=100
 let g:material_theme_style = 'darker'
 colorscheme material
+highlight Normal guibg=none
+highlight SignColumn guibg=none
 
 let mapleader=" "
 let g:lightline = { 'colorscheme': 'material_vim' }
