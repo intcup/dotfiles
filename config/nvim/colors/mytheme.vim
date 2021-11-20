@@ -1,16 +1,17 @@
 hi clear
 
 hi Comment guifg=#505050
-hi Statement guifg=#109681
+hi Constant guifg=#dcb364
 
-hi Type guifg=#D21655
+hi Identifier guifg=#20d3df
 
-hi Constant guifg=#F8C548
-hi Number guifg=#F87F48
+hi Statement guifg=#6a7bed
 
-hi PreProc guifg=#057864
+hi Type guifg=#20e674
 
-hi Special guifg=#9966ff
+hi PreProc guifg=#20d3df
+
+hi Special guifg=#9872dc
 
 
 hi LineNr guifg=#808080
@@ -27,3 +28,5 @@ hi GitGutterAdd guifg=#00ff00
 hi GitGutterChange guifg=#ff751a
 hi GitGutterChangeDelete guifg=#ff0000 gui=bold
 hi GitGutterDelete guifg=#ff0000
+
+hi Pmenu guibg=#202020
