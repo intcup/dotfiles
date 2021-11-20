@@ -1,24 +1,27 @@
 set number
 set termguicolors
+set updatetime=100
+set shiftwidth=4
+set tabstop=4
+set expandtab
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'preservim/nerdtree'
+Plug 'neovim/nvim-lspconfig'
 Plug 'airblade/vim-gitgutter'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
 
 au User lsp_setup call lsp#register_server({'name': 'clangd','cmd': {server_info->['clangd']},'allowlist': ['cpp', 'c'],})
 
-set updatetime=100
 color mytheme
 
 let mapleader=" "
 
-nnoremap <Leader>n :NERDTreeToggle <CR>
 nnoremap <Leader>x :Explore <CR>
-nnoremap <Leader>gu :GitGutterUndoHunk <CR>
-nnoremap <Leader>gad :GitGutterStageHunk <CR>
+
+lua << EOF
+require("lsp")
+EOF
+
+set statusline=%f%=%y\ %l:%c
