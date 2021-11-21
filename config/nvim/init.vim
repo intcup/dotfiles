@@ -12,8 +12,6 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-au User lsp_setup call lsp#register_server({'name': 'clangd','cmd': {server_info->['clangd']},'allowlist': ['cpp', 'c'],})
-
 color mytheme
 
 let mapleader=" "

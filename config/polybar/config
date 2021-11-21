@@ -1,5 +1,5 @@
 [colors]
-color-0 = #309080
+color-0 = #20d3df
 [bar/top]
 bottom=false
 modules-left=bspwm
