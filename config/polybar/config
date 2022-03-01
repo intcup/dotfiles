@@ -3,7 +3,7 @@ color-0 = #20d3df
 [bar/top]
 bottom=false
 modules-left=bspwm
-modules-right=root home cpu memory battery date time
+modules-right=root cpu memory battery date time
 module-margin=1
 background= #a0303030
 tray-position = right
@@ -47,13 +47,6 @@ type = internal/cpu
 label = %percentage:3%%
 format-prefix =  
 format-prefix-foreground = ${colors.color-0}
-
-[module/home]
-type = internal/fs
-mount-0 = /home
-label-mounted = %free%
-format-mounted-prefix = " "
-format-mounted-prefix-foreground = ${colors.color-0}
 
 [module/root]
 type = internal/fs

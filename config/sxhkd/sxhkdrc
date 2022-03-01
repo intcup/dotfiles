@@ -4,10 +4,8 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun -drun-use-desktop-cache
+	rofi -show drun
 
-super + alt + @space
-	rofi -show drun -drun-reload-desktop-cache
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -122,7 +120,7 @@ super + {Left,Down,Up,Right}
 
 # Captura de pantalla
 Print
-	scrot ~/Imagenes/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png
+	scrot ~/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png
 
 super + Print
-	scrot ~/Imagenes/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png -s -f
+	scrot ~/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png -s -f

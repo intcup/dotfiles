@@ -1,3 +1,4 @@
+PATH=$PATH:$HOME/.local/bin
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -47,11 +48,7 @@ alias gad='git add'
 alias gcm='git commit'
 alias gdf='git diff'
 
-# Plugins
-source ~/.zplug/init.zsh
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "jeffreytse/zsh-vi-mode"
-zplug load
+alias dev='cd ~/devel'
 
 PROMPT='%B%F{2}%n%f@%F{3}%m %F{4}%~ ${vcs_info_msg_0_}
 %b%f%# '

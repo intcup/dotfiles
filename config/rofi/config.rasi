@@ -2,7 +2,6 @@ configuration {
 font: "Roboto Mono 10";
 	run-command: "sh -ci '{cmd}'";
 	drun-display-format: "{name}";
-	drun-use-desktop-cache: true;
 }
 
 @theme "theme"
