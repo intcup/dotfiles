@@ -1,4 +1,14 @@
-PATH=$PATH:$HOME/.local/bin
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+. ~/.antidote/antidote.zsh
+antidote load
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -7,7 +17,6 @@ setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY_TIME
 
 export EDITOR=nvim
-export INTEL_DEBUG=reemit
 
 setopt autocd
 setopt prompt_subst
@@ -18,8 +27,7 @@ setopt list_ambiguous
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/arttec/.zshrc'
 
-
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu select search
 zstyle ':completion:*' insert false
 zstyle ':completion:*' keep-prefix true
 zstyle ':completion:*' matcher-list '' 'l:|=* r:|=*'
@@ -29,6 +37,7 @@ zstyle ':completion:*' group-name ''
 autoload -Uz compinit; compinit
 autoload -Uz vcs_info
 autoload edit-command-line; zle -N edit-command-line
+autoload -Uz promptinit; promptinit
 bindkey -M vicmd v edit-command-line
 
 zstyle ':vcs_info:*' enable git
@@ -50,5 +59,5 @@ alias gdf='git diff'
 
 alias dev='cd ~/devel'
 
-PROMPT='%B%F{2}%n%f@%F{3}%m %F{4}%~ ${vcs_info_msg_0_}
-%b%f%# '
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
