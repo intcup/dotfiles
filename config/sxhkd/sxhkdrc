@@ -120,7 +120,7 @@ super + {Left,Down,Up,Right}
 
 # Captura de pantalla
 Print
-	scrot ~/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png
+	mkdir -p ~/screenshots & scrot ~/screenshots/screenshot.png
 
 super + Print
-	scrot ~/screenshot_$(printf "%03d" $(ls ~/Imagenes | wc -l)).png -s -f
+	mkdir -p ~/screenshots & scrot ~/screenshots/screenshot.png

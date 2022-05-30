@@ -1,7 +1,8 @@
 configuration {
-font: "Roboto Mono 10";
+	font: "Hack 10";
 	run-command: "sh -ci '{cmd}'";
 	drun-display-format: "{name}";
+	show-icons: true;
 }
 
 @theme "theme"
