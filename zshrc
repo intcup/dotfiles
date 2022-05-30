@@ -1,10 +1,9 @@
 source "${HOME}/.zgenom/zgenom.zsh"
-
 zgenom autoupdate
 if ! zgenom saved; then
 	zgenom load zdharma-continuum/fast-syntax-highlighting
-	zgenom load xylous/gitstatus
 fi
+
 export EDITOR=nvim
 
 autoload -Uz compinit; compinit
@@ -29,12 +28,10 @@ zstyle ':completion:*:*:*:*:descriptions' format '%F{green}%d%f'
 zstyle ':completion:*' group-name ''
 
 # vcs_info zstyles
-zstyle ':vcs_info:*' check-for-staged-changes true
-
+zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '%F{red}'
 zstyle ':vcs_info:*' stagedstr '%F{yellow}'
 zstyle ':vcs_info:*' formats '%F{green}%c%u %b'
-
 
 bindkey -M vicmd v edit-command-line
 
