@@ -2,6 +2,7 @@ source "${HOME}/.zgenom/zgenom.zsh"
 zgenom autoupdate
 if ! zgenom saved; then
 	zgenom load zdharma-continuum/fast-syntax-highlighting
+	zgenom load aperezdc/zsh-fzy
 fi
 
 export EDITOR=nvim
@@ -45,6 +46,10 @@ alias gdf='git diff'
 alias glg='git log --oneline'
 
 alias dev='cd ~/devel'
+
+# fzy config
+zstyle :fzy:file command fd
+zstyle :fzy:cd command fd -t d
 
 precmd () { vcs_info }
 PROMPT=$'%B%F{cyan}%~ ${vcs_info_msg_0_} \n%b%f%# '
