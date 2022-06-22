@@ -9,12 +9,17 @@ require('packer').startup(function()
 	use 'neovim/nvim-lspconfig'
 	use 'EdenEast/nightfox.nvim'
 	use 'nvim-lualine/lualine.nvim'
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-cmdline'
 end)
 require('gitsigns').setup()
 vim.opt.number = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.scrolloff = 10
+vim.opt.laststatus = 3
 
 require('indent_blankline').setup{
 	show_current_context = true,
@@ -27,12 +32,23 @@ require('nvim-treesitter.configs').setup {
 	}
 }
 
-servers = {
-	'clangd'
+require('lspconfig').clangd.setup{}
+
+-- CMP
+local cmp = require('cmp')
+cmp.setup{
+	mapping = {
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-Space>"] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.abort(),
+		['<CR>'] = cmp.mapping.confirm({ select = true })
+	},
+	sources = cmp.config.sources({
+		{name = 'nvim_lsp'},
+		{name = 'buffer'}
+	})
 }
-for _, lsp in pairs(servers) do
-	require('lspconfig')[lsp].setup {}
-end
 
 -- Theme
 require('nightfox').setup{
@@ -41,22 +57,21 @@ require('nightfox').setup{
 	},
 	groups = {
 		all = {
-			FloatBorder = {	bg = '#131a24' }
+			FloatBorder = {	link = 'NormalFloat' }
 		}
 	}
 }
-vim.cmd('colorscheme nightfox')
+vim.cmd('colorscheme nordfox')
 
 -- Status line
-require('lualine').setup{
-	theme = 'material'
-}
+require('lualine').setup{}
 
 -- Keymaps
 vim.g.mapleader = " "
 gs = package.loaded.gitsigns
 local mapx = require'mapx'.setup{}
-mapx.nmap('<leader>fe', function() fzy.execute('fd', fzy.sinks.edit_file) end)
-mapx.nmap('<leader>gb', function() gs.blame_line() end)
-mapx.nmap('<leader>gs', function() gs.stage_hunk() end)
-mapx.nmap('<leader>gS', function() gs.stage_buffer() end)
+mapx.nmap('<leader>fe', '<CMD>lua fzy.execute(\'fd\', fzy.sinks.edit_file)<CR>')
+mapx.nmap('<leader>gb', '<CMD>lua gs.blame_line()<CR>')
+mapx.nmap('<leader>gs', '<CMD>lua gs.stage_hunk()<CR>')
+mapx.nmap('<leader>gS', '<CMD>lua gs.stage_buffer()<CR>')
+mapx.nmap('<leader>gu', '<CMD>lua gs.undo_stage_hunk()<CR>')

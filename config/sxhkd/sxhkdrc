@@ -123,4 +123,4 @@ Print
 	mkdir -p ~/screenshots & scrot ~/screenshots/screenshot.png
 
 super + Print
-	mkdir -p ~/screenshots & scrot ~/screenshots/screenshot.png
+	mkdir -p ~/screenshots & scrot -s -f ~/screenshots/screenshot.png

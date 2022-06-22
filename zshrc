@@ -34,8 +34,6 @@ zstyle ':vcs_info:*' unstagedstr '%F{red}'
 zstyle ':vcs_info:*' stagedstr '%F{yellow}'
 zstyle ':vcs_info:*' formats '%F{green}%c%u %b'
 
-bindkey -M vicmd v edit-command-line
-
 alias ls='exa --icons'
 alias ll='ls -l'
 alias la='ls -la'
@@ -46,10 +44,15 @@ alias gdf='git diff'
 alias glg='git log --oneline'
 
 alias dev='cd ~/devel'
+alias doc='cd ~/Documents'
 
 # fzy config
-zstyle :fzy:file command fd
+zstyle :fzy:file command fd . $BUFFER
 zstyle :fzy:cd command fd -t d
+
+bindkey -v
+bindkey -M vicmd v edit-command-line
+bindkey '^F' fzy-file-widget
 
 precmd () { vcs_info }
 PROMPT=$'%B%F{cyan}%~ ${vcs_info_msg_0_} \n%b%f%# '
