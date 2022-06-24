@@ -43,6 +43,8 @@ alias gcm='git commit'
 alias gdf='git diff'
 alias glg='git log --oneline'
 
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
 alias dev='cd ~/devel'
 alias doc='cd ~/Documents'
 
