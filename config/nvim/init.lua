@@ -1,6 +1,4 @@
 require('packer').startup(function()
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
 	use 'lewis6991/gitsigns.nvim'
 	use 'mfussenegger/nvim-fzy'
 	use 'lukas-reineke/indent-blankline.nvim'
@@ -13,6 +11,8 @@ require('packer').startup(function()
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-cmdline'
+	use 'L3MON4D3/LuaSnip'
+	use 'saadparwaiz1/cmp_luasnip'
 end)
 require('gitsigns').setup()
 vim.opt.number = true
@@ -29,20 +29,38 @@ fzy = require('fzy')
 require('nvim-treesitter.configs').setup {
 	highlight = {
 		enable = true
-	}
+	},
+	indent = {
+		enable = true
+	},
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "gnn",
+			node_incremental = "grn",
+			scope_incremental = "grc",
+			node_decremental = "grm",
+		},
+	},
 }
 
+--LSP
 require('lspconfig').clangd.setup{}
+require('lspconfig').phan.setup{}
 
 -- CMP
 local cmp = require('cmp')
 cmp.setup{
+	snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      end,
+    },
 	mapping = {
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<C-Space>"] = cmp.mapping.complete(),
 		['<C-e>'] = cmp.mapping.abort(),
-		['<CR>'] = cmp.mapping.confirm({ select = true })
+		['<C-Space>'] = cmp.mapping.confirm({ select = true })
 	},
 	sources = cmp.config.sources({
 		{name = 'nvim_lsp'},
@@ -70,7 +88,9 @@ require('lualine').setup{}
 vim.g.mapleader = " "
 gs = package.loaded.gitsigns
 local mapx = require'mapx'.setup{}
-mapx.nmap('<leader>fe', '<CMD>lua fzy.execute(\'fd\', fzy.sinks.edit_file)<CR>')
+mapx.nmap('<leader>fe', '<CMD>lua fzy.execute(\'fd -t f\', fzy.sinks.edit_file)<CR>')
+mapx.nmap('<leader>fg', '<CMD>lua fzy.actions.buf_lines()<CR>')
+
 mapx.nmap('<leader>gb', '<CMD>lua gs.blame_line()<CR>')
 mapx.nmap('<leader>gs', '<CMD>lua gs.stage_hunk()<CR>')
 mapx.nmap('<leader>gS', '<CMD>lua gs.stage_buffer()<CR>')

@@ -1,0 +1,7 @@
+font:
+  normal:
+    family: Hack
+  size: 12
+window:
+  dynamic_padding: true
+  decorations: full
