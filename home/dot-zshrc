@@ -8,7 +8,6 @@ fi
 export EDITOR=nvim
 
 autoload -Uz compinit; compinit
-autoload edit-command-line; zle -N edit-command-line
 autoload -Uz vcs_info
 
 HISTFILE=~/.histfile
@@ -50,7 +49,6 @@ zstyle :fzy:file command fd . $BUFFER
 zstyle :fzy:cd command fd -t d
 
 bindkey -v
-bindkey -M vicmd v edit-command-line
 bindkey '^F' fzy-file-widget
 
 precmd () { vcs_info }
