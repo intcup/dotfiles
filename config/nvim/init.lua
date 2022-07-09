@@ -5,7 +5,6 @@ require('packer').startup(function()
 	use 'b0o/mapx.nvim'
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'neovim/nvim-lspconfig'
-	use 'EdenEast/nightfox.nvim'
 	use 'nvim-lualine/lualine.nvim'
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -13,6 +12,7 @@ require('packer').startup(function()
 	use 'hrsh7th/cmp-cmdline'
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
+	use 'RRethy/nvim-base16'
 end)
 require('gitsigns').setup()
 vim.opt.number = true
@@ -67,19 +67,6 @@ cmp.setup{
 		{name = 'buffer'}
 	})
 }
-
--- Theme
-require('nightfox').setup{
-	options = {
-		transparent = true
-	},
-	groups = {
-		all = {
-			FloatBorder = {	link = 'NormalFloat' }
-		}
-	}
-}
-vim.cmd('colorscheme nordfox')
 
 -- Status line
 require('lualine').setup{}
