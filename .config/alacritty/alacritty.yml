@@ -1,6 +1,6 @@
 font:
   normal:
-    family: Hack
+    family: Hack Nerd Font
   size: 12
 window:
   padding:
@@ -8,3 +8,4 @@ window:
     y: 5
   dynamic_padding: true
   decorations: full
+  opacity: 0.7

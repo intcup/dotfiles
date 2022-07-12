@@ -51,5 +51,7 @@ zstyle :fzy:cd command fd -t d
 bindkey -v
 bindkey '^F' fzy-file-widget
 
+alias dotf='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
 precmd () { vcs_info }
 PROMPT=$'%B%F{cyan}%~ ${vcs_info_msg_0_} \n%b%f%# '
