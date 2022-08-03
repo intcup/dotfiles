@@ -13,12 +13,11 @@ autoload -Uz vcs_info
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt INC_APPEND_HISTORY_TIME
 setopt autocd
 setopt prompt_subst
 setopt list_ambiguous
-setopt noglob
 
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
@@ -55,3 +54,4 @@ alias dotf='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 precmd () { vcs_info }
 PROMPT=$'%B%F{cyan}%~ ${vcs_info_msg_0_} \n%b%f%# '
+pfetch
