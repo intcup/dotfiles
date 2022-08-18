@@ -4,11 +4,12 @@ local servers = {
 	'html',
 	'cssls',
 	'eslint',
-	'sumneko_lua'
+	'sumneko_lua',
+	'marksman'
 }
 
 require('mapx').nmap('<Leader>=', '<cmd>lua vim.lsp.buf.formatting_sync()<CR>')
-vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWrite' }, {
 	pattern = { '*' },
 	command = 'lua vim.lsp.buf.formatting_sync()',
 })

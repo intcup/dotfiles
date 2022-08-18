@@ -9,12 +9,6 @@ return require('packer').startup(
 			end
 		}
 		use {
-			'mfussenegger/nvim-fzy',
-			config = function()
-				require('fzy-config')
-			end
-		}
-		use {
 			'lukas-reineke/indent-blankline.nvim',
 			config = function()
 				require('indent-config')
@@ -50,7 +44,8 @@ return require('packer').startup(
 				'hrsh7th/cmp-buffer',
 				'L3MON4D3/LuaSnip',
 				'onsails/lspkind.nvim',
-				'saadparwaiz1/cmp_luasnip'
+				'saadparwaiz1/cmp_luasnip',
+				'hrsh7th/cmp-nvim-lsp-signature-help'
 			},
 			config = function()
 				require('cmp-config')
@@ -61,5 +56,12 @@ return require('packer').startup(
 			config = function()
 				require('nightfox-config')
 			end
+		}
+		use {
+			'ibhagwan/fzf-lua',
+			config = function()
+				require('fzf-config')
+			end,
+			requires = { 'kyazdani42/nvim-web-devicons' }
 		}
 	end)

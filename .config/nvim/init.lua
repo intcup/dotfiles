@@ -1,5 +1,6 @@
 require('config')
 require('plugins')
+
 -- General
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4

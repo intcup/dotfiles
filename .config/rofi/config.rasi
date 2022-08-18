@@ -1,7 +1,6 @@
 configuration {
 	font: "Hack Nerd Font 10";
 	show-icons: true;
-	run-command: "sh -ci '{cmd}'";
 	drun-display-format: "{name}";
 }
 
