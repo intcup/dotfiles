@@ -1,5 +1,5 @@
-vim.cmd[[ packadd nightfox.nvim ]]
-require('nightfox').setup{
+vim.cmd [[ packadd nightfox.nvim ]]
+require('nightfox').setup {
 	options = {
 		transparent = true
 	},
@@ -10,4 +10,4 @@ require('nightfox').setup{
 	}
 }
 
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme nordfox")
