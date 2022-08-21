@@ -34,7 +34,3 @@ cmp.setup.cmdline(':', {
 		{ name = 'cmdline' }
 	})
 })
-
-local mapx = require('mapx')
-mapx.snoremap('<Tab>', '<CMD>lua require("luasnip").jump(1)<CR>')
-mapx.snoremap('<S-Tab>', '<CMD>lua require("luasnip").jump(-1)<CR>')

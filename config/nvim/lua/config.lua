@@ -1,3 +1,12 @@
+-- General
+vim.g.mapleader = ' '
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.number = true
+vim.opt.laststatus = 3
+vim.opt.scrolloff = 10
+vim.opt.termguicolors = true
+
 local disabled_built_ins = {
 	"netrw",
 	"netrwPlugin",

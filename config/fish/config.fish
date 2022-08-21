@@ -1,5 +1,12 @@
 set -gx EDITOR nvim
 
+alias ls='exa --icons'
+alias ll='ls -l'
+alias la='ls -l -a'
+
+alias notas='cd ~/Documents/Notas'
+alias dev='cd ~/Devel'
+
 set __fish_git_prompt_show_informative_status
 
 set fish_cursor_insert line
@@ -52,6 +59,11 @@ function fish_prompt
 	set_color --bold cyan
 	echo -n (prompt_pwd) 
 	echo -n (fish_vcs_prompt)
+	set_color --bold normal
 	printf '\n$ '
 	set_color normal
+end
+
+function fish_greeting
+	pfetch
 end

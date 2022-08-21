@@ -6,35 +6,25 @@ return require('packer').startup(
 			'lewis6991/gitsigns.nvim',
 			config = function()
 				require('gitsigns').setup()
-			end
+			end,
 		}
 		use {
 			'lukas-reineke/indent-blankline.nvim',
-			config = function()
-				require('indent-config')
-			end
+			config = function() require('configs.indent') end
 		}
 		use {
 			'nvim-treesitter/nvim-treesitter',
-			config = function()
-				require 'nvim-treesitter.configs'.setup {
-					highlight = { enable = true },
-				}
-			end
+			config = [[require 'nvim-treesitter.configs'.setup {highlight = { enable = true },}]]
 		}
 		use {
 			'neovim/nvim-lspconfig',
 			after = 'nvim-cmp',
-			config = function()
-				require('lsp-config')
-			end
+			config = function() require('configs.lsp') end
 		}
 		use {
 			'nvim-lualine/lualine.nvim',
 			requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-			config = function()
-				require('lualine').setup()
-			end
+			config = function() require('lualine').setup() end
 		}
 		use {
 			'hrsh7th/nvim-cmp',
@@ -48,20 +38,24 @@ return require('packer').startup(
 				'hrsh7th/cmp-nvim-lsp-signature-help'
 			},
 			config = function()
-				require('cmp-config')
+				require('configs.cmp')
 			end
 		}
 		use {
 			'EdenEast/nightfox.nvim',
-			config = function()
-				require('nightfox-config')
-			end
+			config = function() require('configs.nightfox') end
 		}
 		use {
-			'ibhagwan/fzf-lua',
-			config = function()
-				require('fzf-config')
-			end,
-			requires = { 'kyazdani42/nvim-web-devicons' }
+			'nvim-telescope/telescope.nvim',
+			requires = {
+
+
+				'nvim-lua/plenary.nvim',
+				'kyazdani42/nvim-web-devicons'
+			},
+			config = function() require('configs.telescope') end,
+		}
+		use {
+			'jakewvincent/mkdnflow.nvim'
 		}
 	end)
