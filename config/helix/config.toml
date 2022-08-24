@@ -1,0 +1,8 @@
+theme = "terminal"
+
+[editor]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"

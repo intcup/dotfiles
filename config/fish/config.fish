@@ -1,10 +1,12 @@
-set -gx EDITOR nvim
+set -gx EDITOR helix
 
 alias ls='exa --icons'
 alias ll='ls -l'
 alias la='ls -l -a'
+alias hx='helix'
 
 alias notas='cd ~/Documents/Notas'
+alias clases='cd ~/Documents/Clases'
 alias dev='cd ~/Devel'
 
 set __fish_git_prompt_show_informative_status
@@ -18,7 +20,6 @@ set __fish_git_prompt_char_stateseparator ' '
 function fish_mode_prompt; end
 
 function fish_git_prompt
-	
 	if git -C . rev-parse 2>/dev/null
 		set_color green
 		printf " %s " (command git rev-parse --abbrev-ref HEAD)
@@ -27,15 +28,15 @@ function fish_git_prompt
 		set untracked (command git ls-files --others | wc -l)
 		if test $staged -gt 0
 			set_color blue
-			printf "$staged "
+			printf " $staged "
 		end
 		if test $modified -gt 0
 			set_color yellow
-			printf "$modified "
+			printf " $modified "
 		end
 		if test $untracked -gt 0
 			set_color red
-			printf "$untracked "
+			printf " $untracked "
 		end
 
 		set origin_count (command git remote | wc -l)

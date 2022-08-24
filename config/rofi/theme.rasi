@@ -51,16 +51,13 @@ mainbox {
 }
 message {
     padding:      1px ;
-    border-color: var(separatorcolor);
     border:       2px dash 0px 0px ;
 }
 textbox {
-    text-color: var(foreground);
 }
 listview {
     padding:      2px 0px 0px ;
     scrollbar:    true;
-    border-color: var(separatorcolor);
     spacing:      2px ;
     fixed-height: 0;
     border:       2px dash 0px 0px ;
@@ -74,17 +71,13 @@ scrollbar {
     handle-color: var(color-primario);
 }
 sidebar {
-    border-color: var(separatorcolor);
     border:       2px dash 0px 0px ;
 }
 button {
     cursor:     pointer;
     spacing:    0;
-    text-color: var(normal-foreground);
 }
 button selected {
-    background-color: var(selected-normal-background);
-    text-color:       var(selected-normal-foreground);
 }
 num-filtered-rows {
     expand:     false;
@@ -107,7 +100,6 @@ inputbar {
 }
 case-indicator {
     spacing:    0;
-    text-color: var(normal-foreground);
 }
 entry {
     padding:           5px ;
