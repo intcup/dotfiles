@@ -1,8 +1,14 @@
+env:
+  TERM: tmux-256color
+  WINIT_X11_SCALE_FACTOR: "1"
 font:
   normal:
     family: Hack Nerd Font 
-  size: 10.0
+  size: 14.0
   scale_with_dpi: true
+dpi:
+  x: 96.0
+  y: 96.0
 window:
   padding:
     x: 5
