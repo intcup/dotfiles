@@ -3,13 +3,23 @@
 'ui.cursor.match' = {fg = 'cyan', modifiers = ['bold','underlined']}
 'ui.statusline' = { bg = 'gray', modifiers = ['bold']}
 'ui.linenr' = { fg = 'gray' }
+'ui.linenr.selected' = { fg = 'yellow' }
 'ui.menu' = { bg = 'gray' }
 
 'type' = { fg = 'blue' }
 'constant' = {fg = 'green' }
 'string' = { fg = 'cyan' }
 'comment' = { fg = 'gray' }
+'function' = { fg = 'green' }
 'variable' = { fg = 'magenta' }
 'keyword' = { fg = 'light-blue' }
 'tag' = { fg = 'light-green' }
 'error' = { fg = 'red' }
+
+'markup.list' = { fg = 'yellow' }
+'markup.bold' = { modifiers = ['bold'] }
+'markup.italic' = { modifiers = ['italic'] }
+'markup.link.url' = { fg = 'yellow' }
+'markup.heading' = { fg = 'cyan', modifiers = ['bold']}
+
+'document' = { fg = 'red'}

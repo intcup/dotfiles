@@ -22,7 +22,7 @@ function fish_mode_prompt; end
 function fish_git_prompt
 	if git -C . rev-parse 2>/dev/null
 		set_color green
-		printf " %s " (command git rev-parse --abbrev-ref HEAD)
+		printf " %s " (command git branch --show-current)
 		set staged (command git diff --cached --numstat | wc -l)
 		set modified (command git ls-files --modified | wc -l)
 		set untracked (command git ls-files --others | wc -l)
