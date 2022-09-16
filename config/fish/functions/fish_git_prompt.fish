@@ -1,0 +1,36 @@
+function fish_git_prompt
+	if git -C . rev-parse 2>/dev/null
+		set_color green
+		printf " %s " (command git branch --show-current)
+		set staged (command git diff --cached --numstat | wc -l)
+		set modified (command git ls-files --modified | wc -l)
+		set untracked (command git ls-files --others | wc -l)
+		if test $staged -gt 0
+			set_color blue
+			printf " $staged "
+		end
+		if test $modified -gt 0
+			set_color yellow
+			printf " $modified "
+		end
+		if test $untracked -gt 0
+			set_color red
+			printf " $untracked "
+		end
+
+		set origin_count (command git remote | wc -l)
+		if test $origin_count -gt 0
+			set ahead (command git log origin..HEAD --oneline | wc -l)
+			set behind (command git log HEAD..origin --oneline | wc -l)
+			if test $ahead -gt 0
+				set_color green
+				printf "$ahead "
+			end
+			if test $behind -gt 0
+				set_color yellow
+				printf "$behind "
+			end
+		end
+	end
+
+end

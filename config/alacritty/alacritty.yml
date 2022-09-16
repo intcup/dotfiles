@@ -22,3 +22,5 @@ colors:
     background: '0x232323'
     foreground: '0xcdcecf'
     # Normal colors
+key_bindings:
+  - { key: N, mods: Alt, action: SpawnNewInstance }

@@ -1,6 +1,6 @@
 # terminal emulator
 super + Return
-	alacritty
+	alacritty msg create-window || alacritty
 
 # program launcher
 super + @space

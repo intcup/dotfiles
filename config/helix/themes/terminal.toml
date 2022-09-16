@@ -1,4 +1,4 @@
-'ui.selection' = {bg = 'black'}
+'ui.selection' = {bg = 'gray'}
 'ui.cursor' = { bg = 'white', fg = 'black' }
 'ui.cursor.match' = {fg = 'cyan', modifiers = ['bold','underlined']}
 'ui.statusline' = { bg = 'gray', modifiers = ['bold']}
@@ -15,6 +15,9 @@
 'keyword' = { fg = 'light-blue' }
 'tag' = { fg = 'light-green' }
 'error' = { fg = 'red' }
+
+'diagnostic' = {modifiers = ['underlined']}
+'diagnostic.error' = { fg = 'red', modifiers = ['underlined']}
 
 'markup.list' = { fg = 'yellow' }
 'markup.bold' = { modifiers = ['bold'] }
