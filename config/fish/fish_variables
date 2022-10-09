@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export SUDO_ASKPASS:rofi\x20\x2ddmenu\x20\x2dpassword
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_ls:exa\x20\x2d\x2dicons
 SETUVAR fish_color_autosuggestion:555\x1ebrblack

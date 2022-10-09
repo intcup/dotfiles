@@ -1,4 +1,4 @@
-set -gx EDITOR nvim
+set -gx EDITOR hx
 
 fish_vi_key_bindings
 
@@ -8,7 +8,8 @@ set fish_cursor_replace_one underscore
 set fish_cursor_visual block
 set fish_vi_force_cursor
 
-alias hx='helix'
+bind -M insert \cf 'fzy_path'
+
 alias ls='exa --icons'
 alias ll='ls -l'
 alias la='ls -l -a'
@@ -36,5 +37,5 @@ function fish_prompt
 end
 
 function fish_greeting
-	pfetch
+	ufetch
 end
