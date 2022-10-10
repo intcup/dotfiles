@@ -3,7 +3,7 @@
 'ui.cursor.match' = {fg = 'cyan', modifiers = ['bold','underlined']}
 'ui.statusline' = { bg = 'gray', modifiers = ['bold']}
 'ui.linenr' = { fg = 'gray' }
-'ui.linenr.selected' = { fg = 'yellow' }
+'ui.linenr.selected' = { fg = 'white' }
 'ui.menu' = { bg = 'gray' }
 
 'type' = { fg = 'blue' }
@@ -25,4 +25,7 @@
 'markup.link.url' = { fg = 'yellow' }
 'markup.heading' = { fg = 'cyan', modifiers = ['bold']}
 
-'document' = { fg = 'red'}
+'ui.menu.selected' = { fg = 'green', bg = 'black' }
+'ui.menu' = { fg = 'white', bg = 'black' }
+'ui.statusline' = { fg = 'white' , bg = 'black' , modifiers = ['bold'] }
+'ui.selection' = { bg = 'black', fg = 'gray'}
