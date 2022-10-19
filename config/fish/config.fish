@@ -1,4 +1,4 @@
-set -gx EDITOR hx
+set -gx EDITOR helix
 
 fish_vi_key_bindings
 
