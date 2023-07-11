@@ -1,13 +1,13 @@
-paq-dir = ~/.local/share/nvim/site/pack/paqs/start/paq-nvim
-zgenom-dir = ~/.zgenom
-
-all: $(paq-dir) $(zgenom-dir)
+all:
 	stow -t ~/.config config
 	stow -t ~ home
 	mkdir -p ~/Screenshots ~/Documents/Notas ~/Devel
 
-$(paq-dir):
-	git clone --depth=1 https://github.com/savq/paq-nvim.git $(paq-dir)
+zgenom:
+	git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
 
-$(zgenom-dir):
-	git clone https://github.com/jandamm/zgenom.git $(zgenom-dir)
+packer:
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+paq:
+	git clone --depth=1 https://github.com/savq/paq-nvim.git ~/.local/share/nvim/site/pack/paqs/start/paq-nvim
