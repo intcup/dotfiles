@@ -1,0 +1,25 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Hack;
+	font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button {
+    color: #f0f0f0;
+}
+
+#workspaces button.focused {
+	color: #00f0f0;
+}
+
+#tray {
+	margin: 0px 5px;
+}

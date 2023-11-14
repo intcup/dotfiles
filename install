@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -svf $(pwd)/config/* ~/.config
+ln -svf $(pwd)/home/.zshrc ~
