@@ -1,8 +1,8 @@
 return {
 	terminal = function(cmd, on_exit)
 		buf = vim.api.nvim_create_buf(false, true)
-		vm = 3
-		hm = 5
+		vm = 5
+		hm = 40
 		local win = vim.api.nvim_open_win(buf,true,{
 			relative = 'editor',
 			border = 'single',
